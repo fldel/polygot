@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Polyglot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section id="welcome" class="welcome-screen">
+    <main class="welcome-content">
+      <button id="startBtn" class="button button">Start <span aria-hidden="true">→</span></button>
+    </main>
+  </section>
+
+  <main id="app" class="app-shell hidden">
+    <header class="topbar">
+      <div class="brand">polyglot<span>.</span></div>
+      <label class="import-link" for="fileInput">Import questions</label>
+    </header>
+    <section class="practice-area">
+      <article id="practiceCard" class="practice-card">
+        <div id="questionCounter" class="question-counter">1 / 50</div>
+        <div id="promptText" class="prompt-text">Loading question…</div>
+        <form id="answerForm">
+          <div class="answer-input-wrap"><div id="answerColorPreview" class="answer-color-preview" aria-hidden="true"></div><input id="answerInput" class="answer-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Type your answer…" disabled></div>
+          <button id="checkBtn" class="button button-dark check-button" type="submit" disabled>Check</button>
+        </form>
+        <p id="feedback" class="feedback" aria-live="polite"></p>
+      </article>
+      <button id="showAnswerBtn" class="show-answer" type="button">Show answer</button>
+      <div id="answerReveal" class="answer-reveal hidden" aria-live="polite"></div>
+    </section>
+  </main>
+  <input id="fileInput" type="file" accept=".json,application/json" multiple hidden>
+  <script src="app.js"></script>
+</body>
+</html>
